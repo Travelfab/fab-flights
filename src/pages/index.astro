@@ -1,22 +1,47 @@
 ---
 import { getCollection } from 'astro:content';
+import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 import DestinationCard from '../components/DestinationCard.astro';
+import IconWhatsApp from '../components/icons/IconWhatsApp.astro';
+import IconSearch from '../components/icons/IconSearch.astro';
+import IconPlane from '../components/icons/IconPlane.astro';
+import IconLuggage from '../components/icons/IconLuggage.astro';
+import IconPassport from '../components/icons/IconPassport.astro';
+import IconPerson from '../components/icons/IconPerson.astro';
+import IconCheck from '../components/icons/IconCheck.astro';
+import heroLondon from '../assets/photos/hero-london.jpg';
 import { SITE, DEFAULT_WA_TEXT } from '../config';
 
 const destinations = (await getCollection('destinations')).sort(
   (a, b) => a.data.order - b.data.order
 );
+const experienceYears = new Date().getFullYear() - SITE.foundedYear;
 ---
 
 <Base title={`${SITE.name} — Vuelos a Latinoamérica desde Londres`}>
-  <!-- Hero -->
-  <section class="bg-navy-900 px-4 pb-16 pt-12 text-white">
+  <!-- Hero: London photo, navy overlay, serif headline, trust strip -->
+  <section class="relative isolate overflow-hidden px-4 pb-16 pt-14 text-white">
+    <Picture
+      src={heroLondon}
+      formats={['avif', 'webp']}
+      widths={[768, 1280, 1600]}
+      sizes="100vw"
+      quality={45}
+      alt=""
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-b from-[rgba(7,22,46,0.55)] to-[rgba(7,22,46,0.8)]"
+    >
+    </div>
     <div class="mx-auto max-w-3xl text-center">
-      <h1 class="text-3xl font-extrabold leading-tight sm:text-5xl">
-        Vuelos a Latinoamérica
-        <span class="text-sun-500">desde Londres</span>
+      <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">
+        Vuelos a Latinoamérica,
+        <em class="text-sun-400">desde Londres</em>
       </h1>
       <p class="mx-auto mt-4 max-w-xl text-lg text-navy-100">
         Te buscamos la mejor ruta y precio a Ecuador, Colombia, Brasil,
@@ -26,38 +51,60 @@ const destinations = (await getCollection('destinations')).sort(
       <div class="mt-8">
         <WhatsAppButton text={DEFAULT_WA_TEXT} />
       </div>
-      <p class="mt-3 text-sm text-navy-100">
-        Respuesta rápida · Sin compromiso · Hablamos tu idioma
-      </p>
+      <ul
+        class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-navy-100 sm:text-sm"
+      >
+        <li class="flex items-center gap-1.5">
+          <IconCheck class="h-4 w-4 text-sun-400" /> Travel Fab Ltd · Reg. 08910640
+        </li>
+        <li class="flex items-center gap-1.5">
+          <IconCheck class="h-4 w-4 text-sun-400" /> Desde {SITE.foundedYear}
+        </li>
+        <li class="flex items-center gap-1.5">
+          <IconCheck class="h-4 w-4 text-sun-400" /> Respuesta rápida
+        </li>
+      </ul>
     </div>
   </section>
 
   <!-- Cómo funciona -->
   <section class="px-4 py-14">
     <div class="mx-auto max-w-5xl">
-      <h2 class="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+      <h2 class="text-center text-2xl font-semibold text-navy-900 sm:text-3xl">
         Así de fácil
       </h2>
       <div class="mt-8 grid gap-6 sm:grid-cols-3">
         <div class="rounded-2xl bg-white p-6 shadow-sm">
-          <div class="text-3xl">💬</div>
-          <h3 class="mt-3 font-bold text-navy-900">1. Escríbenos</h3>
+          <div
+            class="flex h-11 w-11 items-center justify-center rounded-full bg-navy-50 text-navy-800"
+          >
+            <IconWhatsApp class="h-6 w-6" />
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-navy-900">1. Escríbenos</h3>
           <p class="mt-2 text-sm leading-relaxed">
             Mándanos por WhatsApp tus fechas, destino y cuántas maletas
             necesitas llevar.
           </p>
         </div>
         <div class="rounded-2xl bg-white p-6 shadow-sm">
-          <div class="text-3xl">🔎</div>
-          <h3 class="mt-3 font-bold text-navy-900">2. Te cotizamos</h3>
+          <div
+            class="flex h-11 w-11 items-center justify-center rounded-full bg-navy-50 text-navy-800"
+          >
+            <IconSearch class="h-6 w-6" />
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-navy-900">2. Te cotizamos</h3>
           <p class="mt-2 text-sm leading-relaxed">
             Buscamos entre aerolíneas y rutas la mejor opción real del día —
             con el equipaje y las escalas claras desde el inicio.
           </p>
         </div>
         <div class="rounded-2xl bg-white p-6 shadow-sm">
-          <div class="text-3xl">✈️</div>
-          <h3 class="mt-3 font-bold text-navy-900">3. Vuela tranquilo</h3>
+          <div
+            class="flex h-11 w-11 items-center justify-center rounded-full bg-navy-50 text-navy-800"
+          >
+            <IconPlane class="h-6 w-6" />
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-navy-900">3. Vuela tranquilo</h3>
           <p class="mt-2 text-sm leading-relaxed">
             Reservamos por ti y quedamos pendientes hasta que llegues.
             Cualquier duda, nos escribes al mismo número.
@@ -70,7 +117,7 @@ const destinations = (await getCollection('destinations')).sort(
   <!-- Destinos -->
   <section class="px-4 pb-14">
     <div class="mx-auto max-w-5xl">
-      <h2 class="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+      <h2 class="text-center text-2xl font-semibold text-navy-900 sm:text-3xl">
         Guías de vuelos por destino
       </h2>
       <p class="mx-auto mt-2 max-w-xl text-center text-navy-700">
@@ -95,33 +142,40 @@ const destinations = (await getCollection('destinations')).sort(
   <!-- Por qué nosotros -->
   <section class="bg-white px-4 py-14">
     <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">
+      <h2 class="text-2xl font-semibold text-navy-900 sm:text-3xl">
         ¿Por qué reservar con nosotros?
       </h2>
       <ul class="mx-auto mt-6 max-w-xl space-y-4 text-left">
         <li class="flex gap-3">
-          <span aria-hidden="true">🇬🇧</span>
+          <IconCheck class="mt-0.5 h-5 w-5 shrink-0 text-wa-700" />
           <span>
             <strong>Empresa real y registrada en el Reino Unido</strong> —
-            {SITE.company}, con años de experiencia en viajes a Latinoamérica.
+            {SITE.company}, n.º {SITE.companyNumber}.
           </span>
         </li>
         <li class="flex gap-3">
-          <span aria-hidden="true">🧳</span>
+          <IconPlane class="mt-0.5 h-5 w-5 shrink-0 text-wa-700" />
+          <span>
+            <strong>Más de {experienceYears} años de experiencia</strong> en
+            vuelos y viajes a Latinoamérica, desde {SITE.foundedYear}.
+          </span>
+        </li>
+        <li class="flex gap-3">
+          <IconLuggage class="mt-0.5 h-5 w-5 shrink-0 text-wa-700" />
           <span>
             <strong>Cotizamos con el equipaje que necesitas</strong> — nada de
             sorpresas en el aeropuerto por maletas no incluidas.
           </span>
         </li>
         <li class="flex gap-3">
-          <span aria-hidden="true">🛂</span>
+          <IconPassport class="mt-0.5 h-5 w-5 shrink-0 text-wa-700" />
           <span>
             <strong>Rutas sin escala en EE. UU.</strong> — evitamos trámites de
             visa de tránsito para ti y tu familia.
           </span>
         </li>
         <li class="flex gap-3">
-          <span aria-hidden="true">💬</span>
+          <IconPerson class="mt-0.5 h-5 w-5 shrink-0 text-wa-700" />
           <span>
             <strong>Una persona, no un bot</strong> — el mismo número de
             WhatsApp antes, durante y después de tu viaje.
