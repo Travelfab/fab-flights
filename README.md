@@ -41,11 +41,24 @@ pnpm preview
      site will never be reached.
 3. SSL: CF proxied + Traefik on EX44, same pattern as travelfab/mycuba.
 
-## Launch checklist
+## Launch checklist — LAUNCHED 2026-06-12 ✅
 
-- [ ] Real WhatsApp Business number in `src/config.ts`
-- [ ] Fact-check pass on all 5 guides (`factsVerified: true` when done)
-- [ ] Owner copy review (tone/wording)
-- [ ] Coolify app created + GitHub auto-deploy wired
-- [ ] CF DNS records added, parking redirect rule removed
-- [ ] Live test of every `wa.me` link from a phone
+- [x] Real WhatsApp Business number in `src/config.ts` (442071481727)
+- [x] Fact-check pass on all 5 guides (routes verified 2026-06-12)
+- [ ] Owner copy review (tone/wording) — post-launch polish welcome
+- [x] Coolify app created (`b7xkbnyrrdw5qbxmd71z91d0` on EX44, project "Fab Flights") + GitHub push-to-deploy webhook wired & proven
+- [x] CF DNS cut over (A → 37.27.103.117 proxied), parking redirect removed, www→root 301 added
+- [ ] Live test of every `wa.me` link from a phone — owner to do
+
+### Deploy notes (learned the hard way)
+
+- Nixpacks builds with **pnpm 9** (from lockfile v9) — `pnpm-workspace.yaml`
+  MUST have a `packages` field or pnpm 9 errors `packages field missing`.
+  pnpm 9 ignores the `allowBuilds` key (pnpm 11 local needs it).
+- Don't use corepack in the install command: Node 22.11's bundled corepack
+  has stale signing keys AND can't launch pnpm 11
+  (`ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING`).
+- EX44 origin is firewalled to Cloudflare ranges — test through CF, not
+  direct-to-origin.
+- Coolify API token `claude-fab-flights-deploy` exists for automation
+  (revoke/manage in Coolify → Security → API tokens).
