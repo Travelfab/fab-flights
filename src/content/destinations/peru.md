@@ -6,16 +6,15 @@ cities: ['Lima', 'Cusco', 'Arequipa']
 heroLine: 'Rutas vía Europa a Lima, con conexión a todo el Perú.'
 waText: 'Hola, quiero información sobre vuelos a Perú 🇵🇪'
 order: 5
-factsVerified: false
+factsVerified: true
 ---
 
 ## Cómo se vuela a Perú desde el Reino Unido
 
-A **Lima (LIM)** se vuela desde Londres normalmente con una escala europea —
-**Madrid, Ámsterdam o París** son las conexiones más habituales. Desde Lima
+Actualmente no hay vuelo directo entre Londres y Lima, así que se viaja
+con una escala europea: **LATAM o Iberia vía Madrid**, **KLM vía
+Ámsterdam** o **Air France vía París** llegan a **Lima (LIM)**, y desde ahí
 conectas a **Cusco, Arequipa, Trujillo o Piura** en el mismo boleto.
-
-<!-- TODO research pass: confirmar rutas vigentes (LATAM/Iberia vía MAD, KLM vía AMS, Air France vía CDG) y si hay directo estacional desde LGW/LHR. -->
 
 ## Evita escalas en Estados Unidos
 

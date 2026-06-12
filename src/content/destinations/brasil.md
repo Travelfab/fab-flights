@@ -6,17 +6,16 @@ cities: ['São Paulo', 'Río de Janeiro', 'Fortaleza', 'Salvador']
 heroLine: 'Directos a São Paulo y Río, y conexiones a todo Brasil.'
 waText: 'Hola, quiero información sobre vuelos a Brasil 🇧🇷'
 order: 3
-factsVerified: false
+factsVerified: true
 ---
 
 ## Cómo se vuela a Brasil desde el Reino Unido
 
-Brasil tiene **vuelos directos desde Londres** a **São Paulo (GRU)** y
-**Río de Janeiro (GIG)**, además de muchísimas combinaciones vía Lisboa,
-Madrid o París que abren rutas al nordeste — **Fortaleza, Recife, Salvador,
-Natal** — sin pasar por el sur.
-
-<!-- TODO research pass: confirmar directos vigentes (BA y LATAM a GRU; BA a GIG), y rutas TAP vía Lisboa al nordeste. -->
+Brasil tiene **vuelos directos desde Londres**: **British Airways y LATAM
+vuelan sin escalas de Heathrow a São Paulo (GRU)**, y **British Airways
+también directo a Río de Janeiro (GIG)**. Además, **TAP vía Lisboa**
+conecta con el nordeste — ciudades como **Fortaleza o Natal** — sin pasar
+por el sur.
 
 ## La ruta correcta depende de tu ciudad final
 

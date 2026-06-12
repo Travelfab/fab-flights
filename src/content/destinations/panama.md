@@ -6,17 +6,17 @@ cities: ['Ciudad de Panamá']
 heroLine: 'Conexiones vía Europa al hub de las Américas.'
 waText: 'Hola, quiero información sobre vuelos a Panamá 🇵🇦'
 order: 4
-factsVerified: false
+factsVerified: true
 ---
 
 ## Cómo se vuela a Panamá desde el Reino Unido
 
-A **Ciudad de Panamá (PTY)** se llega desde Londres con una escala en
-Europa — las combinaciones más usadas van vía **Ámsterdam, Madrid o París**.
-Panamá es además el gran hub de conexiones de Centroamérica y el Caribe, así
-que es punto de entrada ideal si tu viaje sigue hacia otro país de la región.
-
-<!-- TODO research pass: confirmar rutas vigentes (KLM vía AMS, Iberia/Air Europa vía MAD, Air France vía CDG) y si existe directo estacional. -->
+No hay vuelo directo del Reino Unido a Panamá, pero se llega cómodamente
+con una sola escala europea: **KLM vía Ámsterdam**, **Iberia vía Madrid** o
+**Air France vía París** vuelan directo a **Ciudad de Panamá (PTY)** desde
+sus hubs. Panamá es además el gran hub de conexiones de Centroamérica y el
+Caribe, así que es punto de entrada ideal si tu viaje sigue hacia otro país
+de la región.
 
 ## Evita escalas en Estados Unidos
 

@@ -6,17 +6,16 @@ cities: ['Bogotá', 'Medellín', 'Cali', 'Cartagena']
 heroLine: 'El destino con vuelo directo desde Londres — y conexiones a todo el país.'
 waText: 'Hola, quiero información sobre vuelos a Colombia 🇨🇴'
 order: 2
-factsVerified: false
+factsVerified: true
 ---
 
 ## Cómo se vuela a Colombia desde el Reino Unido
 
 Colombia es de los pocos destinos latinos con **vuelo directo desde
-Londres a Bogotá**, además de muchas combinaciones vía Madrid u otras
-ciudades europeas. Desde Bogotá conectas fácilmente a **Medellín, Cali,
-Cartagena, Barranquilla o Pereira** en el mismo boleto.
-
-<!-- TODO research pass: confirmar el directo LHR–BOG (Avianca) vigente, frecuencias, y alternativas (Iberia/Air Europa vía MAD). -->
+Londres**: **Avianca vuela sin escalas de Heathrow a Bogotá**. Además hay
+muy buenas combinaciones con **Iberia y Air Europa vía Madrid**. Desde
+Bogotá conectas fácilmente a **Medellín, Cali, Cartagena, Barranquilla o
+Pereira** en el mismo boleto.
 
 ## Directo o con escala: qué conviene
 

@@ -8,9 +8,8 @@ export const SITE = {
   tagline: 'Vuelos a Latinoamérica desde Londres, con atención en español',
   description:
     'Te ayudamos a encontrar y reservar tu vuelo a Ecuador, Colombia, Brasil, Panamá o Perú desde el Reino Unido. Atención personal en español por WhatsApp.',
-  // TODO(owner): replace with the real WhatsApp Business number.
-  // International format, digits only — no "+", no spaces. e.g. 447911123456
-  whatsappNumber: '447900000000',
+  // WhatsApp Business number — international format, digits only (no "+", no spaces).
+  whatsappNumber: '442071481727',
 } as const;
 
 /** Build a click-to-chat link with a pre-filled message (also our per-page lead attribution). */

@@ -6,17 +6,16 @@ cities: ['Quito', 'Guayaquil']
 heroLine: 'Conexiones cómodas vía Madrid o Ámsterdam, sin pisar Estados Unidos.'
 waText: 'Hola, quiero información sobre vuelos a Ecuador 🇪🇨'
 order: 1
-factsVerified: false
+factsVerified: true
 ---
 
 ## Cómo se vuela a Ecuador desde el Reino Unido
 
-No existen vuelos directos entre Londres y Ecuador, así que todo viaje lleva
-una escala. Las rutas que más usamos para nuestros clientes salen de Londres
-con conexión en **Madrid** o **Ámsterdam**, llegando a **Quito (UIO)** o
-**Guayaquil (GYE)**. También hay buenas combinaciones vía **Bogotá**.
-
-<!-- TODO research pass: confirmar aerolíneas vigentes (Iberia/Air Europa vía MAD, KLM vía AMS, Avianca vía BOG), frecuencias y aeropuertos. -->
+No existen vuelos directos entre el Reino Unido y Ecuador, así que todo
+viaje lleva una escala. Las rutas habituales a **Quito (UIO)** y
+**Guayaquil (GYE)** son con **KLM vía Ámsterdam**, **Iberia o Air Europa
+vía Madrid**, o **Avianca vía Bogotá** — esta última muy práctica porque la
+conexión es corta y ya en territorio latinoamericano.
 
 ## Evita escalas en Estados Unidos
 
