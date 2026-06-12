@@ -20,7 +20,10 @@ const destinations = (await getCollection('destinations')).sort(
 const experienceYears = new Date().getFullYear() - SITE.foundedYear;
 ---
 
-<Base title={`${SITE.name} — Vuelos a Latinoamérica desde Londres`}>
+<Base
+  title={`${SITE.name} — Vuelos a Latinoamérica desde Londres`}
+  ogImage={heroLondon}
+>
   <!-- Hero: London photo, navy overlay, serif headline, trust strip -->
   <section class="relative isolate overflow-hidden px-4 pb-16 pt-14 text-white">
     <Picture

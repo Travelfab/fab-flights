@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { SITE, waLink, DEFAULT_WA_TEXT } from '../config';
 import IconWhatsApp from '../components/icons/IconWhatsApp.astro';
 
@@ -7,10 +9,27 @@ interface Props {
   title: string;
   description?: string;
   waText?: string;
+  ogImage?: ImageMetadata;
 }
 
-const { title, description = SITE.description, waText = DEFAULT_WA_TEXT } = Astro.props;
+const {
+  title,
+  description = SITE.description,
+  waText = DEFAULT_WA_TEXT,
+  ogImage,
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
+// 1200x630 JPEG for WhatsApp/social link previews; URL must be absolute.
+const ogJpeg = ogImage
+  ? await getImage({
+      src: ogImage,
+      width: 1200,
+      height: 630,
+      format: 'jpeg',
+      fit: 'cover',
+    })
+  : null;
+const ogImageUrl = ogJpeg ? new URL(ogJpeg.src, SITE.url).href : null;
 ---
 
 <!doctype html>
@@ -29,6 +48,16 @@ const canonical = new URL(Astro.url.pathname, SITE.url).href;
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
+    {
+      ogImageUrl && (
+        <Fragment>
+          <meta property="og:image" content={ogImageUrl} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Fragment>
+      )
+    }
     <meta name="generator" content={Astro.generator} />
   </head>
   <body class="min-h-screen bg-navy-50 font-sans text-navy-800 antialiased">

@@ -23,7 +23,7 @@ const photo = photoFor(destination.id);
 const photoCredit = PHOTO_CREDITS[destination.id];
 ---
 
-<Base title={title} description={heroLine} waText={waText}>
+<Base title={title} description={heroLine} waText={waText} ogImage={photo}>
   <section class="relative isolate overflow-hidden px-4 py-14 text-white">
     <Picture
       src={photo}
