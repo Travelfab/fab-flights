@@ -58,17 +58,19 @@
 
 New `order` frontmatter: **1 Ecuador · 2 Colombia · 3 Brasil · 4 Perú · 5 Panamá** (vs. today only Perú/Panamá swap).
 
-Rationale — verified claims from the deep-research run:
+Rationale — verified claims from the deep-research run (full report: `docs/research/2026-06-12-uk-latam-diaspora-research.md`):
 
-- London diaspora ranking (2011 Census detail, *Towards Visibility*, Queen Mary University/Trust for London): Brazil 31,357 > Colombia 19,338 > **Ecuador 7,171** > Argentina > Venezuela > Mexico > Peru 3,301 > Chile > Bolivia 2,694. Ecuador is London's third-largest Latin American community — fab.flights' core catchment — so pinning it first is also data-coherent.
-- Census 2021 (ONS TS012/Nomis, verified): 254,222 South America-born residents in England & Wales (largest Americas-origin group) vs. only 23,573 born in **all of Central America combined** (incl. Panama and Mexico) — hence Perú ranks above Panamá.
-- Colombia is the largest *Spanish-speaking* community and has the only Spanish-LatAm direct route (LHR–Bogotá); Brazil is the largest market overall but Portuguese-speaking — Colombia sits second for a Spanish-first audience.
+- Census 2021 country-of-birth, England & Wales (verified against the ONS API): Brazil 111,477 > Colombia 37,831 > Venezuela 19,980 ≈ **Ecuador 19,613** > Argentina 16,414 > Mexico 13,175 > Peru 10,943 > Chile 7,883 > Bolivia 7,403. Ecuador is also **London's third-largest** Latin American community (2011 detail: Brazil > Colombia > Ecuador), and the QMUL-documented ~1.7× census undercount hits Ecuadorians hardest — pinning Ecuador first is data-coherent for a London agency.
+- Panama is not even a separately coded country of birth in Census 2021; all of Central America combined (incl. Mexico) is 23,573 vs. 254,222 South America-born — hence Perú ranks above Panamá.
+- CAA 2023 (verified): Brazil 596,105 direct passengers; Colombia 165,827 on LHR–Bogotá, +32% YoY — the fastest-growing direct UK–LatAm route. Ecuador and Panama have zero direct UK service and Peru effectively none (181 pax) — VFR demand to them flies via hubs, which is where the agency adds value.
+- Colombia over Brasil at slot 2: largest *Spanish-speaking* community, longest-established in London, and Bogotá is the Avianca hub for Ecuador itineraries; Brazil is the bigger market overall but Portuguese-speaking — a different audience from the Spanish-first WhatsApp community. (Site analytics can revisit this later.)
 
 ## 8. Out of scope (future work)
 
-- **Bolivia and Venezuela guides** — research suggests both deserve pages (sizeable, London-concentrated, Spanish-speaking, no direct flights = high agency value-add; unverified Census 2021 data puts Venezuela's community above Ecuador's). Each needs the same fact-verification pass as the existing five guides before publishing.
+- **Venezuela guide** — the clearest missing destination (verified: 3rd-largest LatAm diaspora at ~20–22k, fastest-growing post-2015, Spanish-speaking, no direct route — classic via-Madrid/Bogotá VFR market). Recommended to slot ahead of Panamá once written. Needs the same fact-verification pass as the existing five guides.
+- Later candidates, in research priority order: Argentina, Mexico, Bolivia (the "Bolivia top-five community" claim was refuted — it ranks 9th by census count, though QMUL flags it as heavily undercounted).
 - Reviews/testimonials section — only once real reviews exist (none today; nothing gets invented).
-- English-language version; Mexico/Argentina/Chile guides (weaker diaspora-VFR fit).
+- English-language version.
 
 ## Not changing
 
@@ -84,4 +86,4 @@ Zero client-side JS · static Astro output · Spanish-only copy · page structur
 
 ## Research provenance note
 
-Deep-research run 2026-06-12 (wf_93b47c06): 9 claims fully verified (3-0/2-0 adversarial votes) — these are the only figures cited as facts above. Verification of ONS 2024 travel-volume and CAA 2023 route-level claims was aborted by an account spend limit; those figures are treated as unverified and excluded from load-bearing decisions (the order rests on verified Census/diaspora data plus the user's pinned Ecuador-first constraint).
+Deep-research run 2026-06-12 (wf_93b47c06, completed in full after resume): 25 claims adversarially verified → 21 confirmed (3-0 votes), 4 refuted. All figures cited above are from confirmed claims; full report with caveats and refuted claims in `docs/research/2026-06-12-uk-latam-diaspora-research.md`. Known limitation: per-country VFR-purpose travel volumes are not directly published (that claim was refuted), so travel demand is inferred from CAA total direct-passenger data plus diaspora size.
