@@ -1,0 +1,21 @@
+// Central site configuration — single place to edit business details.
+
+export const SITE = {
+  name: 'Fab Flights',
+  url: 'https://fab.flights',
+  company: 'Travelfab Ltd',
+  companyNote: 'Empresa registrada en el Reino Unido',
+  tagline: 'Vuelos a Latinoamérica desde Londres, con atención en español',
+  description:
+    'Te ayudamos a encontrar y reservar tu vuelo a Ecuador, Colombia, Brasil, Panamá o Perú desde el Reino Unido. Atención personal en español por WhatsApp.',
+  // TODO(owner): replace with the real WhatsApp Business number.
+  // International format, digits only — no "+", no spaces. e.g. 447911123456
+  whatsappNumber: '447900000000',
+} as const;
+
+/** Build a click-to-chat link with a pre-filled message (also our per-page lead attribution). */
+export function waLink(text: string): string {
+  return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(text)}`;
+}
+
+export const DEFAULT_WA_TEXT = 'Hola, quiero información sobre vuelos a Latinoamérica';

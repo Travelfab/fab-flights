@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+export async function getStaticPaths() {
+  const destinations = await getCollection('destinations');
+  return destinations.map((d) => ({
+    params: { slug: d.id },
+    props: { destination: d },
+  }));
+}
+
+const { destination } = Astro.props;
+const { Content } = await render(destination);
+const { country, title, flag, cities, heroLine, waText, priceNote } =
+  destination.data;
+---
+
+<Base title={title} description={heroLine} waText={waText}>
+  <section class="bg-navy-900 px-4 py-12 text-white">
+    <div class="mx-auto max-w-3xl">
+      <p class="text-4xl" aria-hidden="true">{flag}</p>
+      <h1 class="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+        {title}
+      </h1>
+      <p class="mt-3 text-navy-100">{cities.join(' · ')}</p>
+      <div class="mt-6">
+        <WhatsAppButton
+          text={waText}
+          label={`Cotizar vuelo a ${country}`}
+          size="md"
+        />
+      </div>
+    </div>
+  </section>
+
+  <article class="guide mx-auto max-w-3xl px-4 py-10">
+    <Content />
+
+    <div class="mt-10 rounded-2xl bg-white p-6 text-center shadow-sm">
+      <p class="font-semibold text-navy-900">{priceNote}</p>
+      <div class="mt-4">
+        <WhatsAppButton text={waText} label={`Cotizar vuelo a ${country}`} />
+      </div>
+    </div>
+  </article>
+</Base>

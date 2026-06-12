@@ -1,0 +1,137 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import DestinationCard from '../components/DestinationCard.astro';
+import { SITE, DEFAULT_WA_TEXT } from '../config';
+
+const destinations = (await getCollection('destinations')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Base title={`${SITE.name} — Vuelos a Latinoamérica desde Londres`}>
+  <!-- Hero -->
+  <section class="bg-navy-900 px-4 pb-16 pt-12 text-white">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1 class="text-3xl font-extrabold leading-tight sm:text-5xl">
+        Vuelos a Latinoamérica
+        <span class="text-sun-500">desde Londres</span>
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-navy-100">
+        Te buscamos la mejor ruta y precio a Ecuador, Colombia, Brasil,
+        Panamá y Perú. Atención personal en español, por WhatsApp, de una
+        agencia registrada en el Reino Unido.
+      </p>
+      <div class="mt-8">
+        <WhatsAppButton text={DEFAULT_WA_TEXT} />
+      </div>
+      <p class="mt-3 text-sm text-navy-100">
+        Respuesta rápida · Sin compromiso · Hablamos tu idioma
+      </p>
+    </div>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="px-4 py-14">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+        Así de fácil
+      </h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="text-3xl">💬</div>
+          <h3 class="mt-3 font-bold text-navy-900">1. Escríbenos</h3>
+          <p class="mt-2 text-sm leading-relaxed">
+            Mándanos por WhatsApp tus fechas, destino y cuántas maletas
+            necesitas llevar.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="text-3xl">🔎</div>
+          <h3 class="mt-3 font-bold text-navy-900">2. Te cotizamos</h3>
+          <p class="mt-2 text-sm leading-relaxed">
+            Buscamos entre aerolíneas y rutas la mejor opción real del día —
+            con el equipaje y las escalas claras desde el inicio.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm">
+          <div class="text-3xl">✈️</div>
+          <h3 class="mt-3 font-bold text-navy-900">3. Vuela tranquilo</h3>
+          <p class="mt-2 text-sm leading-relaxed">
+            Reservamos por ti y quedamos pendientes hasta que llegues.
+            Cualquier duda, nos escribes al mismo número.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinos -->
+  <section class="px-4 pb-14">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="text-center text-2xl font-bold text-navy-900 sm:text-3xl">
+        Guías de vuelos por destino
+      </h2>
+      <p class="mx-auto mt-2 max-w-xl text-center text-navy-700">
+        Rutas, equipaje, escalas y cuándo comprar — lo que de verdad
+        necesitas saber antes de cotizar.
+      </p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          destinations.map((d) => (
+            <DestinationCard
+              slug={d.id}
+              country={d.data.country}
+              flag={d.data.flag}
+              cities={d.data.cities}
+              heroLine={d.data.heroLine}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Por qué nosotros -->
+  <section class="bg-white px-4 py-14">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">
+        ¿Por qué reservar con nosotros?
+      </h2>
+      <ul class="mx-auto mt-6 max-w-xl space-y-4 text-left">
+        <li class="flex gap-3">
+          <span aria-hidden="true">🇬🇧</span>
+          <span>
+            <strong>Empresa real y registrada en el Reino Unido</strong> —
+            {SITE.company}, con años de experiencia en viajes a Latinoamérica.
+          </span>
+        </li>
+        <li class="flex gap-3">
+          <span aria-hidden="true">🧳</span>
+          <span>
+            <strong>Cotizamos con el equipaje que necesitas</strong> — nada de
+            sorpresas en el aeropuerto por maletas no incluidas.
+          </span>
+        </li>
+        <li class="flex gap-3">
+          <span aria-hidden="true">🛂</span>
+          <span>
+            <strong>Rutas sin escala en EE. UU.</strong> — evitamos trámites de
+            visa de tránsito para ti y tu familia.
+          </span>
+        </li>
+        <li class="flex gap-3">
+          <span aria-hidden="true">💬</span>
+          <span>
+            <strong>Una persona, no un bot</strong> — el mismo número de
+            WhatsApp antes, durante y después de tu viaje.
+          </span>
+        </li>
+      </ul>
+      <div class="mt-8">
+        <WhatsAppButton text={DEFAULT_WA_TEXT} label="Empieza tu cotización" />
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Brand palette: deep night-flight navy, warm sun accent, WhatsApp green for CTAs */
+  --color-navy-50: #f0f4fa;
+  --color-navy-100: #d9e2f0;
+  --color-navy-700: #1d3a63;
+  --color-navy-800: #13294b;
+  --color-navy-900: #0b2545;
+  --color-sun-300: #ffd166;
+  --color-sun-400: #ffc233;
+  --color-sun-500: #ffb703;
+  --color-wa-500: #25d366;
+  --color-wa-600: #1ebe5b;
+  --color-wa-700: #128c7e;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Minimal prose styling for guide markdown (keeps deps at zero) */
+.guide {
+  @apply text-navy-800 leading-relaxed;
+}
+.guide h2 {
+  @apply mt-10 mb-3 text-2xl font-bold text-navy-900;
+}
+.guide h3 {
+  @apply mt-6 mb-2 text-lg font-semibold text-navy-900;
+}
+.guide p {
+  @apply my-4;
+}
+.guide ul {
+  @apply my-4 list-disc pl-6 space-y-2;
+}
+.guide strong {
+  @apply font-semibold text-navy-900;
+}
+.guide a {
+  @apply text-navy-700 underline underline-offset-2;
+}
