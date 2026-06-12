@@ -3,8 +3,10 @@
 export const SITE = {
   name: 'Fab Flights',
   url: 'https://fab.flights',
-  company: 'Travelfab Ltd',
-  companyNote: 'Empresa registrada en el Reino Unido',
+  // Registered name + number exactly as on the Companies House register (verified 2026-06-12).
+  company: 'Travel Fab Limited',
+  companyNumber: '08910640',
+  foundedYear: 2014,
   tagline: 'Vuelos a Latinoamérica desde Londres, con atención en español',
   description:
     'Te ayudamos a encontrar y reservar tu vuelo a Ecuador, Colombia, Brasil, Panamá o Perú desde el Reino Unido. Atención personal en español por WhatsApp.',

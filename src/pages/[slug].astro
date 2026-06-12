@@ -1,7 +1,10 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Picture } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { flagFor } from '../components/flags';
+import { photoFor, PHOTO_CREDITS } from '../assets/photos';
 
 export async function getStaticPaths() {
   const destinations = await getCollection('destinations');
@@ -13,15 +16,33 @@ export async function getStaticPaths() {
 
 const { destination } = Astro.props;
 const { Content } = await render(destination);
-const { country, title, flag, cities, heroLine, waText, priceNote } =
+const { country, title, cities, heroLine, waText, priceNote } =
   destination.data;
+const Flag = flagFor(destination.id);
+const photo = photoFor(destination.id);
+const photoCredit = PHOTO_CREDITS[destination.id];
 ---
 
-<Base title={title} description={heroLine} waText={waText}>
-  <section class="bg-navy-900 px-4 py-12 text-white">
+<Base title={title} description={heroLine} waText={waText} ogImage={photo}>
+  <section class="relative isolate overflow-hidden px-4 py-14 text-white">
+    <Picture
+      src={photo}
+      formats={['avif', 'webp']}
+      widths={[768, 1280, 1600]}
+      sizes="100vw"
+      quality={45}
+      alt=""
+      class="absolute inset-0 -z-20 h-full w-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div
+      class="absolute inset-0 -z-10 bg-gradient-to-b from-[rgba(7,22,46,0.55)] to-[rgba(7,22,46,0.8)]"
+    >
+    </div>
     <div class="mx-auto max-w-3xl">
-      <p class="text-4xl" aria-hidden="true">{flag}</p>
-      <h1 class="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+      <Flag class="h-6 w-9 shadow-sm" />
+      <h1 class="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
         {title}
       </h1>
       <p class="mt-3 text-navy-100">{cities.join(' · ')}</p>
@@ -44,5 +65,11 @@ const { country, title, flag, cities, heroLine, waText, priceNote } =
         <WhatsAppButton text={waText} label={`Cotizar vuelo a ${country}`} />
       </div>
     </div>
+
+    {
+      photoCredit && (
+        <p class="mt-6 text-center text-xs text-navy-700/60">{photoCredit}</p>
+      )
+    }
   </article>
 </Base>

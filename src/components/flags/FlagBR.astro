@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-4 w-6' } = Astro.props;
+---
+
+<svg viewBox="0 0 24 16" class={`rounded-[2px] ${className}`} aria-hidden="true">
+  <rect width="24" height="16" fill="#009B3A"></rect>
+  <path d="M12 2 22 8 12 14 2 8z" fill="#FEDF00"></path>
+  <circle cx="12" cy="8" r="3" fill="#002776"></circle>
+</svg>

@@ -1,7 +1,6 @@
 ---
 country: Ecuador
 title: 'Vuelos a Ecuador desde Londres y el Reino Unido'
-flag: 🇪🇨
 cities: ['Quito', 'Guayaquil']
 heroLine: 'Conexiones cómodas vía Madrid o Ámsterdam, sin pisar Estados Unidos.'
 waText: 'Hola, quiero información sobre vuelos a Ecuador 🇪🇨'

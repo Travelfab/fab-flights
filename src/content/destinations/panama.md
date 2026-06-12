@@ -1,11 +1,10 @@
 ---
 country: Panamá
 title: 'Vuelos a Panamá desde Londres y el Reino Unido'
-flag: 🇵🇦
 cities: ['Ciudad de Panamá']
 heroLine: 'Conexiones vía Europa al hub de las Américas.'
 waText: 'Hola, quiero información sobre vuelos a Panamá 🇵🇦'
-order: 4
+order: 5
 factsVerified: true
 ---
 

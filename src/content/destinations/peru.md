@@ -1,11 +1,10 @@
 ---
 country: Perú
 title: 'Vuelos a Perú desde Londres y el Reino Unido'
-flag: 🇵🇪
 cities: ['Lima', 'Cusco', 'Arequipa']
 heroLine: 'Rutas vía Europa a Lima, con conexión a todo el Perú.'
 waText: 'Hola, quiero información sobre vuelos a Perú 🇵🇪'
-order: 5
+order: 4
 factsVerified: true
 ---
 
