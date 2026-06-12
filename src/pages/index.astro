@@ -83,7 +83,6 @@ const destinations = (await getCollection('destinations')).sort(
             <DestinationCard
               slug={d.id}
               country={d.data.country}
-              flag={d.data.flag}
               cities={d.data.cities}
               heroLine={d.data.heroLine}
             />

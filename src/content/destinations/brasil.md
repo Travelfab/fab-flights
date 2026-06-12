@@ -1,7 +1,6 @@
 ---
 country: Brasil
 title: 'Vuelos a Brasil desde Londres y el Reino Unido'
-flag: 🇧🇷
 cities: ['São Paulo', 'Río de Janeiro', 'Fortaleza', 'Salvador']
 heroLine: 'Directos a São Paulo y Río, y conexiones a todo Brasil.'
 waText: 'Hola, quiero información sobre vuelos a Brasil 🇧🇷'

@@ -1,20 +1,22 @@
 ---
+import { flagFor } from './flags';
+
 interface Props {
   slug: string;
   country: string;
-  flag: string;
   cities: string[];
   heroLine: string;
 }
 
-const { slug, country, flag, cities, heroLine } = Astro.props;
+const { slug, country, cities, heroLine } = Astro.props;
+const Flag = flagFor(slug);
 ---
 
 <a
   href={`/${slug}`}
   class="block rounded-2xl border border-navy-100 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
 >
-  <div class="text-4xl" aria-hidden="true">{flag}</div>
+  <Flag class="h-5 w-[30px] shadow-sm" />
   <h3 class="mt-3 text-xl font-bold text-navy-900">{country}</h3>
   <p class="mt-1 text-sm text-navy-700">{cities.join(' · ')}</p>
   <p class="mt-3 text-sm leading-relaxed">{heroLine}</p>

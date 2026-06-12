@@ -1,7 +1,6 @@
 ---
 country: Colombia
 title: 'Vuelos a Colombia desde Londres y el Reino Unido'
-flag: 🇨🇴
 cities: ['Bogotá', 'Medellín', 'Cali', 'Cartagena']
 heroLine: 'El destino con vuelo directo desde Londres — y conexiones a todo el país.'
 waText: 'Hola, quiero información sobre vuelos a Colombia 🇨🇴'

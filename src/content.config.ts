@@ -6,7 +6,6 @@ const destinations = defineCollection({
   schema: z.object({
     country: z.string(),
     title: z.string(),
-    flag: z.string(),
     cities: z.array(z.string()).min(1),
     heroLine: z.string(),
     waText: z.string(),
