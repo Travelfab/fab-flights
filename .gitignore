@@ -15,3 +15,10 @@ node_modules/
 
 # scratch (workspace convention)
 _to-delete_*/
+
+# brainstorming visual companion sessions + ad-hoc screenshots
+.superpowers/
+.playwright-mcp/
+*.png
+!public/**/*.png
+!src/**/*.png
